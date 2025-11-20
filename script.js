@@ -97,41 +97,12 @@ window.addEventListener('scroll', () => {
 // Newsletter Form Handler
 // ================================
 
-const newsletterForm = document.querySelector('.newsletter-form');
+const newsletterForm = document.getElementById('newsletter-form');
 
 if (newsletterForm) {
     newsletterForm.addEventListener('submit', (e) => {
         e.preventDefault();
-
-        const emailInput = newsletterForm.querySelector('input[type="email"]');
-        const submitButton = newsletterForm.querySelector('button');
-        const email = emailInput.value;
-
-        // Simple validation
-        if (email && validateEmail(email)) {
-            // Store the original button text
-            const originalText = submitButton.textContent;
-
-            // Show success message
-            submitButton.textContent = 'Subscribed!';
-            submitButton.style.backgroundColor = 'var(--forest-green)';
-            submitButton.style.color = 'var(--off-white)';
-
-            // Clear the input
-            emailInput.value = '';
-
-            // Reset button after 3 seconds
-            setTimeout(() => {
-                submitButton.textContent = originalText;
-                submitButton.style.backgroundColor = '';
-                submitButton.style.color = '';
-            }, 3000);
-
-            // Here you would typically send the email to your backend
-            console.log('Newsletter subscription:', email);
-        } else {
-            alert('Please enter a valid email address');
-        }
+        alert('Mailing list is a work in progress. Check back soon!');
     });
 }
 

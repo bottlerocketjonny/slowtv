@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Slow TV - British indie/alternative band. Listen to our music, check tour dates, and connect with us.">
-    <title>Slow TV - Band</title>
+    <title>Slow TV</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -71,13 +72,6 @@
         <div class="container">
             <h2 class="section-title">Music</h2>
             <div class="music-content">
-                <div class="music-player">
-                    <div class="player-placeholder">
-                        <p>🎵 Spotify/Bandcamp Player</p>
-                        <p class="placeholder-note">Add your embed code here</p>
-                    </div>
-                </div>
-
                 <div class="releases">
                     <div class="release-card">
                         <div class="release-artwork halftone-bg">
@@ -91,10 +85,10 @@
         </div>
     </section>
 
-    <!-- Tour Dates Section -->
+    <!-- Tour Section -->
     <section id="tour" class="section tour">
         <div class="container">
-            <h2 class="section-title">Tour Dates</h2>
+            <h2 class="section-title">Tour</h2>
             <div class="tour-poster">
                 <img src="assets/slow tv cc gig animated.gif" alt="Slow TV at Richmond Cricket Club - 21 December">
             </div>
@@ -106,15 +100,8 @@
         <div class="container">
             <h2 class="section-title">Gallery</h2>
             <div class="instagram-feed">
-                <!-- Instagram feed embed goes here -->
-                <!-- To add your Instagram feed:
-                     1. Visit https://www.instagram.com/slowtvband/embed
-                     2. Or use a service like SnapWidget, Flockler, or Embedsocial
-                     3. Paste the embed code here -->
-                <div class="instagram-placeholder">
-                    <p>Follow us on Instagram</p>
-                    <a href="https://instagram.com/slowtvband" target="_blank" rel="noopener noreferrer" class="instagram-link">@slowtvband</a>
-                </div>
+                <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+                <div class="elfsight-app-d7bd3e88-f0c9-4b42-8d5d-3c0e0e0e0e0e" data-elfsight-app-lazy></div>
             </div>
         </div>
     </section>
@@ -125,26 +112,32 @@
             <h2 class="section-title">Contact</h2>
             <div class="contact-content">
                 <div class="newsletter">
-                    <h3>Stay Updated</h3>
+                    <h3>Mailing List</h3>
                     <p>Sign up for news about new releases and tour dates</p>
-                    <form class="newsletter-form">
+                    <form class="newsletter-form" id="newsletter-form">
                         <input type="email" placeholder="your@email.com" required>
                         <button type="submit">Subscribe</button>
                     </form>
                 </div>
 
-                <div class="social-links">
-                    <h3>Follow Us</h3>
-                    <div class="social-icons">
-                        <a href="https://instagram.com/slowtvband" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">Instagram</a>
-                        <a href="https://tiktok.com/@slowtvband" class="social-link" aria-label="TikTok" target="_blank" rel="noopener noreferrer">TikTok</a>
-                        <a href="#" class="social-link" aria-label="Spotify">Spotify</a>
-                        <a href="#" class="social-link" aria-label="Bandcamp">Bandcamp</a>
-                    </div>
+                <div class="contact-form-section">
+                    <h3>Get In Touch</h3>
+                    <form class="contact-form" action="https://formsubmit.co/jj.coddington93@gmail.com" method="POST">
+                        <input type="text" name="name" placeholder="Name" required>
+                        <input type="email" name="email" placeholder="Email" required>
+                        <textarea name="message" placeholder="Message" rows="5" required></textarea>
+                        <button type="submit">Send</button>
+                    </form>
+                </div>
+            </div>
 
-                    <div class="contact-email">
-                        <p>Booking: <a href="mailto:booking@slowtv.band">booking@slowtv.band</a></p>
-                    </div>
+            <div class="social-links">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://instagram.com/slowtvband" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a href="https://tiktok.com/@slowtvband" class="social-link" aria-label="TikTok" target="_blank" rel="noopener noreferrer">TikTok</a>
+                    <a href="#" class="social-link" aria-label="Spotify">Spotify</a>
+                    <a href="#" class="social-link" aria-label="Bandcamp">Bandcamp</a>
                 </div>
             </div>
         </div>
