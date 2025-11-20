@@ -613,14 +613,14 @@ a:hover {
         position: fixed;
         top: 0;
         right: -100%;
-        height: 100vh;
+        height: 100dvh;
         width: 70%;
         max-width: 300px;
         background-color: var(--off-white);
         flex-direction: column;
         padding: 5rem 2rem 2rem;
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-        transition: right 0.3s ease;
+        transition: right 0.3s ease, height 0.3s ease;
         gap: var(--spacing-md);
         z-index: 999;
     }
