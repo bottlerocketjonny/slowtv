@@ -682,6 +682,17 @@ a:hover {
     }
 }
 
+@media (min-width: 1200px) {
+    .tour-poster {
+        max-width: 600px;
+    }
+
+    .releases {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
+        justify-content: center;
+    }
+}
+
 /* ================================
    Animations
    ================================ */
