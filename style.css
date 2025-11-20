@@ -295,7 +295,7 @@ a:hover {
 }
 
 .halftone-bg span {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: transparent;
     padding: 1rem 2rem;
     position: relative;
     z-index: 2;
