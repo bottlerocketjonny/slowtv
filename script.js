@@ -119,6 +119,9 @@ function validateEmail(email) {
 // ================================
 
 window.addEventListener('scroll', () => {
+    // Only apply parallax on desktop (viewport width > 768px)
+    if (window.innerWidth <= 768) return;
+
     const hero = document.querySelector('.hero');
     const scrolled = window.pageYOffset;
     const heroHeight = hero.offsetHeight;
