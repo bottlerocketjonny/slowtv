@@ -9,13 +9,13 @@
 }
 
 :root {
-    /* Color Palette - Risograph Inspired */
-    --slate-grey: #6B7B7A;
-    --forest-green: #4A5947;
-    --dusty-blue: #7B9BA8;
-    --warm-tan: #E8B87E;
-    --off-white: #F5F3ED;
-    --dark-text: #2A2A2A;
+    /* Color Palette - Black & White */
+    --black: #000000;
+    --dark-grey: #2A2A2A;
+    --mid-grey: #666666;
+    --light-grey: #CCCCCC;
+    --off-white: #F5F5F5;
+    --white: #FFFFFF;
 
     /* Typography */
     --font-heading: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
@@ -37,8 +37,8 @@ html {
 body {
     font-family: var(--font-body);
     line-height: 1.6;
-    color: var(--dark-text);
-    background-color: var(--off-white);
+    color: var(--dark-grey);
+    background-color: var(--white);
     overflow-x: hidden;
 }
 
@@ -74,13 +74,13 @@ p {
 }
 
 a {
-    color: var(--forest-green);
+    color: var(--black);
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
 a:hover {
-    color: var(--dusty-blue);
+    color: var(--mid-grey);
 }
 
 /* ================================
@@ -92,7 +92,7 @@ a:hover {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: var(--off-white);
+    background-color: var(--white);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     padding: 1rem 0;
@@ -111,7 +111,7 @@ a:hover {
     font-family: var(--font-heading);
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--dark-text);
+    color: var(--black);
     letter-spacing: 0;
 }
 
@@ -126,7 +126,7 @@ a:hover {
     text-transform: uppercase;
     font-size: 0.9rem;
     letter-spacing: 0.05em;
-    color: var(--dark-text);
+    color: var(--dark-grey);
     padding: 0.5rem 0;
     position: relative;
 }
@@ -138,7 +138,7 @@ a:hover {
     left: 0;
     width: 0;
     height: 2px;
-    background-color: var(--forest-green);
+    background-color: var(--black);
     transition: width 0.3s ease;
 }
 
@@ -156,7 +156,7 @@ a:hover {
     align-items: center;
     justify-content: center;
     position: relative;
-    background: linear-gradient(135deg, var(--slate-grey) 0%, var(--forest-green) 100%);
+    background: var(--black);
     overflow: hidden;
 }
 
@@ -169,7 +169,7 @@ a:hover {
 
 .hero-title {
     font-size: clamp(4rem, 15vw, 12rem);
-    color: var(--off-white);
+    color: var(--white);
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -196,16 +196,7 @@ a:hover {
 }
 
 .halftone-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image:
-        radial-gradient(circle, var(--dark-text) 1px, transparent 1px);
-    background-size: 8px 8px;
-    opacity: 0.15;
-    z-index: 1;
+    display: none;
 }
 
 /* ================================
@@ -225,7 +216,7 @@ a:hover {
 
 .section-title {
     margin-bottom: var(--spacing-lg);
-    color: var(--forest-green);
+    color: var(--black);
     position: relative;
     display: inline-block;
 }
@@ -235,7 +226,7 @@ a:hover {
    ================================ */
 
 .about {
-    background-color: var(--off-white);
+    background-color: var(--white);
 }
 
 .about-content {
@@ -252,12 +243,12 @@ a:hover {
 .members {
     margin-top: var(--spacing-md);
     padding: var(--spacing-md);
-    background-color: var(--dusty-blue);
-    color: var(--off-white);
+    background-color: var(--dark-grey);
+    color: var(--white);
 }
 
 .members h3 {
-    color: var(--warm-tan);
+    color: var(--white);
     margin-bottom: var(--spacing-sm);
 }
 
@@ -291,8 +282,8 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--slate-grey);
-    color: var(--off-white);
+    background-color: var(--light-grey);
+    color: var(--dark-grey);
     font-weight: 700;
     font-size: 1.2rem;
     text-transform: uppercase;
@@ -300,10 +291,7 @@ a:hover {
 }
 
 .halftone-bg {
-    background-image:
-        radial-gradient(circle, var(--dark-text) 1.5px, transparent 1.5px);
-    background-size: 10px 10px;
-    background-color: var(--slate-grey);
+    background-color: var(--light-grey);
 }
 
 .halftone-bg span {
@@ -318,7 +306,7 @@ a:hover {
    ================================ */
 
 .music {
-    background: linear-gradient(to bottom, var(--off-white) 0%, var(--dusty-blue) 100%);
+    background-color: var(--off-white);
 }
 
 .music-content {
@@ -332,8 +320,8 @@ a:hover {
 }
 
 .player-placeholder {
-    background-color: var(--forest-green);
-    color: var(--off-white);
+    background-color: var(--dark-grey);
+    color: var(--white);
     padding: var(--spacing-lg);
     text-align: center;
     border-radius: 8px;
@@ -361,10 +349,11 @@ a:hover {
 }
 
 .release-card {
-    background-color: var(--off-white);
+    background-color: var(--white);
     padding: var(--spacing-md);
     text-align: center;
     transition: transform 0.3s ease;
+    border: 2px solid var(--light-grey);
 }
 
 .release-card:hover {
@@ -377,7 +366,7 @@ a:hover {
 }
 
 .release-year {
-    color: var(--slate-grey);
+    color: var(--mid-grey);
     font-weight: 600;
 }
 
@@ -386,7 +375,7 @@ a:hover {
    ================================ */
 
 .tour {
-    background-color: var(--off-white);
+    background-color: var(--white);
 }
 
 .tour-dates {
@@ -401,22 +390,22 @@ a:hover {
     gap: var(--spacing-md);
     align-items: center;
     padding: var(--spacing-md);
-    background-color: white;
-    border: 3px solid var(--dark-text);
+    background-color: var(--white);
+    border: 3px solid var(--black);
     transition: all 0.3s ease;
 }
 
 .tour-item:hover {
     transform: translateX(10px);
-    box-shadow: -8px 8px 0 var(--warm-tan);
+    box-shadow: -8px 8px 0 var(--light-grey);
 }
 
 .tour-date {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: var(--forest-green);
-    color: var(--off-white);
+    background-color: var(--black);
+    color: var(--white);
     padding: 1rem;
     min-width: 80px;
 }
@@ -439,23 +428,24 @@ a:hover {
 }
 
 .tour-location {
-    color: var(--slate-grey);
+    color: var(--mid-grey);
     margin: 0;
 }
 
 .tour-tickets {
-    background-color: var(--warm-tan);
-    color: var(--dark-text);
+    background-color: var(--black);
+    color: var(--white);
     padding: 0.75rem 2rem;
     font-weight: 700;
     text-transform: uppercase;
-    border: 2px solid var(--dark-text);
+    border: 2px solid var(--black);
     transition: all 0.3s ease;
 }
 
 .tour-tickets:hover {
-    background-color: var(--dark-text);
-    color: var(--warm-tan);
+    background-color: var(--white);
+    color: var(--black);
+    border-color: var(--black);
 }
 
 /* ================================
@@ -463,7 +453,7 @@ a:hover {
    ================================ */
 
 .gallery {
-    background: linear-gradient(to bottom, var(--off-white) 0%, var(--slate-grey) 100%);
+    background-color: var(--off-white);
     padding-bottom: var(--spacing-xl);
 }
 
@@ -487,12 +477,12 @@ a:hover {
    ================================ */
 
 .contact {
-    background-color: var(--forest-green);
-    color: var(--off-white);
+    background-color: var(--black);
+    color: var(--white);
 }
 
 .contact .section-title {
-    color: var(--warm-tan);
+    color: var(--white);
 }
 
 .contact-content {
@@ -503,7 +493,7 @@ a:hover {
 
 .newsletter h3,
 .social-links h3 {
-    color: var(--warm-tan);
+    color: var(--white);
     margin-bottom: var(--spacing-sm);
 }
 
@@ -516,9 +506,9 @@ a:hover {
 .newsletter-form input {
     flex: 1;
     padding: 1rem;
-    border: 2px solid var(--off-white);
+    border: 2px solid var(--white);
     background-color: transparent;
-    color: var(--off-white);
+    color: var(--white);
     font-size: 1rem;
 }
 
@@ -528,8 +518,8 @@ a:hover {
 
 .newsletter-form button {
     padding: 1rem 2rem;
-    background-color: var(--warm-tan);
-    color: var(--dark-text);
+    background-color: var(--white);
+    color: var(--black);
     border: none;
     font-weight: 700;
     text-transform: uppercase;
@@ -538,7 +528,7 @@ a:hover {
 }
 
 .newsletter-form button:hover {
-    background-color: var(--off-white);
+    background-color: var(--light-grey);
     transform: translateY(-2px);
 }
 
@@ -552,8 +542,8 @@ a:hover {
 .social-link {
     padding: 0.75rem 1.5rem;
     background-color: transparent;
-    color: var(--off-white);
-    border: 2px solid var(--off-white);
+    color: var(--white);
+    border: 2px solid var(--white);
     font-weight: 600;
     text-transform: uppercase;
     font-size: 0.9rem;
@@ -561,9 +551,9 @@ a:hover {
 }
 
 .social-link:hover {
-    background-color: var(--warm-tan);
-    color: var(--dark-text);
-    border-color: var(--warm-tan);
+    background-color: var(--white);
+    color: var(--black);
+    border-color: var(--white);
 }
 
 .contact-email {
@@ -573,7 +563,7 @@ a:hover {
 }
 
 .contact-email a {
-    color: var(--warm-tan);
+    color: var(--white);
     font-weight: 600;
 }
 
@@ -582,8 +572,8 @@ a:hover {
    ================================ */
 
 .footer {
-    background-color: var(--dark-text);
-    color: var(--off-white);
+    background-color: var(--dark-grey);
+    color: var(--white);
     text-align: center;
     padding: var(--spacing-md);
 }
