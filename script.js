@@ -121,8 +121,10 @@ function validateEmail(email) {
 gsap.registerPlugin(ScrollTrigger);
 
 // Configure ScrollTrigger for better mobile performance
-ScrollTrigger.normalizeScroll(true);
-ScrollTrigger.config({ ignoreMobileResize: true });
+ScrollTrigger.config({
+    ignoreMobileResize: true,
+    autoRefreshEvents: 'visibilitychange,DOMContentLoaded,load'
+});
 
 // Parallax and fade effect for hero content
 gsap.to('.hero-content', {
@@ -133,7 +135,8 @@ gsap.to('.hero-content', {
         trigger: '.hero',
         start: 'top top',
         end: 'bottom top',
-        scrub: 1 // Add slight smoothing (0-3, where 1 = smooth but responsive)
+        scrub: 0.5, // Lower value = more responsive, less lag
+        invalidateOnRefresh: true
     }
 });
 
@@ -145,7 +148,8 @@ gsap.to('.halftone-overlay', {
         trigger: '.hero',
         start: 'top top',
         end: 'bottom top',
-        scrub: 1
+        scrub: 0.5,
+        invalidateOnRefresh: true
     }
 });
 
