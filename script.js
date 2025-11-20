@@ -115,34 +115,33 @@ function validateEmail(email) {
 }
 
 // ================================
-// Parallax Effect for Hero
+// Parallax Effect for Hero (GSAP)
 // ================================
 
-let ticking = false;
+gsap.registerPlugin(ScrollTrigger);
 
-window.addEventListener('scroll', () => {
-    if (!ticking) {
-        window.requestAnimationFrame(() => {
-            const hero = document.querySelector('.hero');
-            const scrolled = window.pageYOffset;
-            const heroHeight = hero.offsetHeight;
+// Parallax and fade effect for hero content
+gsap.to('.hero-content', {
+    y: 300,
+    opacity: 0,
+    ease: 'none',
+    scrollTrigger: {
+        trigger: '.hero',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true
+    }
+});
 
-            if (scrolled < heroHeight) {
-                const heroContent = document.querySelector('.hero-content');
-                const halftoneOverlay = document.querySelector('.halftone-overlay');
-
-                // Parallax effect - content moves slower than scroll (use translate3d for hardware acceleration)
-                heroContent.style.transform = `translate3d(0, ${scrolled * 0.5}px, 0)`;
-                heroContent.style.opacity = 1 - (scrolled / heroHeight);
-
-                // Halftone overlay subtle movement
-                halftoneOverlay.style.transform = `translate3d(0, ${scrolled * 0.2}px, 0)`;
-            }
-
-            ticking = false;
-        });
-
-        ticking = true;
+// Subtle parallax for halftone overlay
+gsap.to('.halftone-overlay', {
+    y: 150,
+    ease: 'none',
+    scrollTrigger: {
+        trigger: '.hero',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true
     }
 });
 
