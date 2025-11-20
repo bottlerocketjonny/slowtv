@@ -417,6 +417,24 @@ a:hover {
     background-color: var(--off-white);
 }
 
+.tour-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    align-items: start;
+}
+
+.tour-poster {
+    width: 100%;
+}
+
+.tour-poster img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 3px solid var(--dark-text);
+}
+
 .tour-dates {
     display: flex;
     flex-direction: column;
@@ -697,6 +715,11 @@ a:hover {
 
     .newsletter-form {
         flex-direction: column;
+    }
+
+    .tour-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
     }
 
     .tour-item {
