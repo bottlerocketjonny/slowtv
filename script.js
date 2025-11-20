@@ -129,6 +129,9 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     function handleParallaxScroll() {
+        // Only apply parallax on desktop
+        if (window.innerWidth <= 768) return;
+
         const currentScrollY = window.scrollY;
         const heroHeight = hero.offsetHeight;
 
