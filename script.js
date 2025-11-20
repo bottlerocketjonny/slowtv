@@ -28,7 +28,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const target = document.querySelector(this.getAttribute('href'));
 
         if (target) {
-            const offsetTop = target.offsetTop - 50; // Account for fixed nav
+            // Use larger offset on small screens
+            const offset = window.innerWidth <= 768 ? 100 : 50;
+            const offsetTop = target.offsetTop - offset; // Account for fixed nav
             window.scrollTo({
                 top: offsetTop,
                 behavior: 'smooth'
