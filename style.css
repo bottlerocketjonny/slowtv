@@ -688,7 +688,7 @@ a:hover {
     }
 
     .releases {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 450px));
         justify-content: center;
     }
 }
