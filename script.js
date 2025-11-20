@@ -118,27 +118,36 @@ function validateEmail(email) {
 // Parallax Effect for Hero (Vanilla JS)
 // ================================
 
-const heroContent = document.querySelector('.hero-content');
-const halftoneOverlay = document.querySelector('.halftone-overlay');
-const hero = document.querySelector('.hero');
+window.addEventListener('DOMContentLoaded', () => {
+    const heroContent = document.querySelector('.hero-content');
+    const halftoneOverlay = document.querySelector('.halftone-overlay');
+    const hero = document.querySelector('.hero');
 
-function handleParallaxScroll() {
-    const currentScrollY = window.scrollY;
-    const heroHeight = hero.offsetHeight;
-
-    // Only apply parallax while scrolling through hero section
-    if (currentScrollY < heroHeight) {
-        // Move hero content down and fade out as user scrolls
-        heroContent.style.transform = `translateY(${currentScrollY * 0.5}px)`;
-        heroContent.style.opacity = 1 - (currentScrollY / heroHeight);
-
-        // Subtle parallax for halftone overlay (slower movement)
-        halftoneOverlay.style.transform = `translateY(${currentScrollY * 0.2}px)`;
+    if (!heroContent || !hero) {
+        console.warn('Parallax elements not found');
+        return;
     }
-}
 
-// Use passive: true for better scroll performance
-window.addEventListener('scroll', handleParallaxScroll, { passive: true });
+    function handleParallaxScroll() {
+        const currentScrollY = window.scrollY;
+        const heroHeight = hero.offsetHeight;
+
+        // Only apply parallax while scrolling through hero section
+        if (currentScrollY < heroHeight) {
+            // Move hero content down and fade out as user scrolls
+            heroContent.style.transform = `translateY(${currentScrollY * 0.5}px)`;
+            heroContent.style.opacity = 1 - (currentScrollY / heroHeight);
+
+            // Subtle parallax for halftone overlay (slower movement)
+            if (halftoneOverlay) {
+                halftoneOverlay.style.transform = `translateY(${currentScrollY * 0.2}px)`;
+            }
+        }
+    }
+
+    // Use passive: true for better scroll performance
+    window.addEventListener('scroll', handleParallaxScroll, { passive: true });
+});
 
 // ================================
 // Ticket Link Handler (Placeholder)
