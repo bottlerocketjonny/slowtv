@@ -216,6 +216,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     line-height: 0.9;
+    animation: slowFloat 8s ease-in-out infinite;
 }
 
 .title-slow {
@@ -697,6 +698,15 @@ a:hover {
 /* ================================
    Animations
    ================================ */
+
+@keyframes slowFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
 
 @keyframes fadeIn {
     from {
