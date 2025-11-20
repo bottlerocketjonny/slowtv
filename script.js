@@ -129,8 +129,15 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     function handleParallaxScroll() {
-        // Only apply parallax on desktop
-        if (window.innerWidth <= 768) return;
+        // Reset transforms on mobile
+        if (window.innerWidth <= 768) {
+            heroContent.style.transform = '';
+            heroContent.style.opacity = '';
+            if (halftoneOverlay) {
+                halftoneOverlay.style.transform = '';
+            }
+            return;
+        }
 
         const currentScrollY = window.scrollY;
         const heroHeight = hero.offsetHeight;
