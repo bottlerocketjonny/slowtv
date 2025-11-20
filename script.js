@@ -115,43 +115,30 @@ function validateEmail(email) {
 }
 
 // ================================
-// Parallax Effect for Hero (GSAP)
+// Parallax Effect for Hero (Vanilla JS)
 // ================================
 
-gsap.registerPlugin(ScrollTrigger);
+const heroContent = document.querySelector('.hero-content');
+const halftoneOverlay = document.querySelector('.halftone-overlay');
+const hero = document.querySelector('.hero');
 
-// Configure ScrollTrigger for better mobile performance
-ScrollTrigger.config({
-    ignoreMobileResize: true,
-    autoRefreshEvents: 'visibilitychange,DOMContentLoaded,load'
-});
+function handleParallaxScroll() {
+    const currentScrollY = window.scrollY;
+    const heroHeight = hero.offsetHeight;
 
-// Parallax and fade effect for hero content
-gsap.to('.hero-content', {
-    y: 300,
-    opacity: 0,
-    ease: 'none',
-    scrollTrigger: {
-        trigger: '.hero',
-        start: 'top top',
-        end: 'bottom top',
-        scrub: 0.5, // Lower value = more responsive, less lag
-        invalidateOnRefresh: true
+    // Only apply parallax while scrolling through hero section
+    if (currentScrollY < heroHeight) {
+        // Move hero content down and fade out as user scrolls
+        heroContent.style.transform = `translateY(${currentScrollY * 0.5}px)`;
+        heroContent.style.opacity = 1 - (currentScrollY / heroHeight);
+
+        // Subtle parallax for halftone overlay (slower movement)
+        halftoneOverlay.style.transform = `translateY(${currentScrollY * 0.2}px)`;
     }
-});
+}
 
-// Subtle parallax for halftone overlay
-gsap.to('.halftone-overlay', {
-    y: 150,
-    ease: 'none',
-    scrollTrigger: {
-        trigger: '.hero',
-        start: 'top top',
-        end: 'bottom top',
-        scrub: 0.5,
-        invalidateOnRefresh: true
-    }
-});
+// Use passive: true for better scroll performance
+window.addEventListener('scroll', handleParallaxScroll, { passive: true });
 
 // ================================
 // Ticket Link Handler (Placeholder)
