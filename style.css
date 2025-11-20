@@ -449,7 +449,7 @@ a:hover {
 }
 
 /* ================================
-   Gallery Section
+   Gallery Section (Instagram Feed)
    ================================ */
 
 .gallery {
@@ -457,19 +457,38 @@ a:hover {
     padding-bottom: var(--spacing-xl);
 }
 
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--spacing-md);
+.instagram-feed {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-.gallery-item {
-    transition: transform 0.3s ease;
+.instagram-placeholder {
+    text-align: center;
+    padding: var(--spacing-xl) var(--spacing-md);
+    background-color: var(--white);
+    border: 2px solid var(--light-grey);
 }
 
-.gallery-item:hover {
-    transform: scale(1.05);
-    z-index: 10;
+.instagram-placeholder p {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+}
+
+.instagram-link {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--black);
+    padding: 1rem 2rem;
+    border: 2px solid var(--black);
+    transition: all 0.3s ease;
+}
+
+.instagram-link:hover {
+    background-color: var(--black);
+    color: var(--white);
 }
 
 /* ================================
