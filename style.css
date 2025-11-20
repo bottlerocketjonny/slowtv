@@ -216,7 +216,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     line-height: 0.9;
-    animation: slowFloat 8s ease-in-out infinite, tvStatic 4s ease-in-out infinite;
+    animation: tvStatic 4s ease-in-out infinite;
 }
 
 .title-slow {
