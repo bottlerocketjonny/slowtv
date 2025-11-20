@@ -206,6 +206,7 @@ a:hover {
     z-index: 2;
     position: relative;
     padding: var(--spacing-md);
+    will-change: transform, opacity;
 }
 
 .hero-title {

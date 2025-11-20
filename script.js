@@ -118,21 +118,31 @@ function validateEmail(email) {
 // Parallax Effect for Hero
 // ================================
 
+let ticking = false;
+
 window.addEventListener('scroll', () => {
-    const hero = document.querySelector('.hero');
-    const scrolled = window.pageYOffset;
-    const heroHeight = hero.offsetHeight;
+    if (!ticking) {
+        window.requestAnimationFrame(() => {
+            const hero = document.querySelector('.hero');
+            const scrolled = window.pageYOffset;
+            const heroHeight = hero.offsetHeight;
 
-    if (scrolled < heroHeight) {
-        const heroContent = document.querySelector('.hero-content');
-        const halftoneOverlay = document.querySelector('.halftone-overlay');
+            if (scrolled < heroHeight) {
+                const heroContent = document.querySelector('.hero-content');
+                const halftoneOverlay = document.querySelector('.halftone-overlay');
 
-        // Parallax effect - content moves slower than scroll
-        heroContent.style.transform = `translateY(${scrolled * 0.5}px)`;
-        heroContent.style.opacity = 1 - (scrolled / heroHeight);
+                // Parallax effect - content moves slower than scroll (use translate3d for hardware acceleration)
+                heroContent.style.transform = `translate3d(0, ${scrolled * 0.5}px, 0)`;
+                heroContent.style.opacity = 1 - (scrolled / heroHeight);
 
-        // Halftone overlay subtle movement
-        halftoneOverlay.style.transform = `translateY(${scrolled * 0.2}px)`;
+                // Halftone overlay subtle movement
+                halftoneOverlay.style.transform = `translate3d(0, ${scrolled * 0.2}px, 0)`;
+            }
+
+            ticking = false;
+        });
+
+        ticking = true;
     }
 });
 
