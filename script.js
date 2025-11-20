@@ -160,6 +160,45 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 // ================================
+// TV Static Effect
+// ================================
+
+window.addEventListener('DOMContentLoaded', () => {
+    const canvas = document.getElementById('static-canvas');
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+
+    // Set canvas size
+    function resizeCanvas() {
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    // Generate TV static noise
+    function drawStatic() {
+        const imageData = ctx.createImageData(canvas.width, canvas.height);
+        const data = imageData.data;
+
+        // Fill with random noise
+        for (let i = 0; i < data.length; i += 4) {
+            const gray = Math.random() * 255;
+            data[i] = gray;     // Red
+            data[i + 1] = gray; // Green
+            data[i + 2] = gray; // Blue
+            data[i + 3] = 255;  // Alpha
+        }
+
+        ctx.putImageData(imageData, 0, 0);
+        requestAnimationFrame(drawStatic);
+    }
+
+    drawStatic();
+});
+
+// ================================
 // Ticket Link Handler (Placeholder)
 // ================================
 
