@@ -199,6 +199,7 @@ a:hover {
     position: relative;
     background: var(--slate-grey);
     overflow: hidden;
+    transition: min-height 0.3s ease;
 }
 
 .hero-content {
