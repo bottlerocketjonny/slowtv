@@ -435,61 +435,6 @@ a:hover {
 }
 
 /* ================================
-   Gallery Section (Instagram Feed)
-   ================================ */
-
-.gallery {
-    background-color: var(--off-white);
-    padding-bottom: var(--spacing-xl);
-}
-
-.instagram-cta {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.instagram-placeholder-box {
-    text-align: center;
-    padding: var(--spacing-xl) var(--spacing-md);
-    background-color: var(--slate-grey);
-    border: 3px solid var(--dark-text);
-}
-
-.instagram-placeholder-box h3 {
-    font-size: 2rem;
-    margin-bottom: var(--spacing-sm);
-    color: var(--off-white);
-}
-
-.instagram-placeholder-box p {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: var(--spacing-md);
-    color: var(--off-white);
-}
-
-.instagram-button {
-    display: inline-block;
-    font-family: var(--font-heading);
-    font-size: 1rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: var(--dark-text);
-    background-color: var(--warm-tan);
-    padding: 1rem 2rem;
-    border: 2px solid var(--warm-tan);
-    transition: all 0.3s ease;
-}
-
-.instagram-button:hover {
-    background-color: var(--dusty-blue);
-    border-color: var(--dusty-blue);
-    color: var(--off-white);
-    transform: translateY(-2px);
-}
-
-/* ================================
    Contact Section
    ================================ */
 
@@ -714,10 +659,6 @@ a:hover {
 
     .newsletter-form {
         flex-direction: column;
-    }
-
-    .gallery-grid {
-        grid-template-columns: 1fr;
     }
 
     .section {
