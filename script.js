@@ -176,29 +176,10 @@ document.addEventListener('mousemove', (e) => {
 });
 
 // ================================
-// Fun Status Bar Messages (90s style)
+// Keep title simple
 // ================================
 
-const statusMessages = [
-    'Thanks for visiting SLOW TV!',
-    'Check out our Demo EP!',
-    'Sheffield rocks!',
-    'Sign our guestbook!',
-    'You are visitor #4782!',
-    'Follow us on Instagram!',
-    'Best viewed at 800x600!'
-];
-
-let messageIndex = 0;
-
-// Rotate through status messages
-function updateTitle() {
-    document.title = '~*~ SLOW TV ~*~ ' + statusMessages[messageIndex];
-    messageIndex = (messageIndex + 1) % statusMessages.length;
-}
-
-// Change title every 3 seconds for that authentic 90s feel
-setInterval(updateTitle, 3000);
+document.title = '~ slow tv ~';
 
 // ================================
 // Easter Egg: Konami Code
