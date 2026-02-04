@@ -84,8 +84,15 @@ if (newsletterForm) {
 }
 
 // ================================
-// Guestbook
+// Guestbook (JSONbin.io)
 // ================================
+// To set up:
+// 1. Go to https://jsonbin.io and create free account
+// 2. Create a new bin with content: []
+// 3. Copy your Bin ID and API Key below
+
+const JSONBIN_BIN_ID = ''; // e.g., '65a1234567890abcdef12345'
+const JSONBIN_API_KEY = ''; // e.g., '$2a$10$...'
 
 const guestbookForm = document.getElementById('guestbook-form');
 const guestbookEntries = document.getElementById('guestbook-entries');
@@ -134,16 +141,24 @@ function renderEntries(entries) {
 async function loadGuestbook() {
     if (!guestbookEntries) return;
 
+    // Check if JSONbin is configured
+    if (!JSONBIN_BIN_ID || !JSONBIN_API_KEY) {
+        guestbookEntries.innerHTML = '<p class="no-entries">guestbook not configured yet!</p>';
+        return;
+    }
+
     try {
-        const response = await fetch('/api/guestbook');
+        const response = await fetch(`https://api.jsonbin.io/v3/b/${JSONBIN_BIN_ID}/latest`, {
+            headers: { 'X-Access-Key': JSONBIN_API_KEY }
+        });
         if (response.ok) {
-            const entries = await response.json();
-            renderEntries(entries);
+            const data = await response.json();
+            renderEntries(data.record || []);
         } else {
-            guestbookEntries.innerHTML = '<p class="no-entries">guestbook unavailable - run server.js!</p>';
+            guestbookEntries.innerHTML = '<p class="no-entries">could not load guestbook</p>';
         }
     } catch (e) {
-        guestbookEntries.innerHTML = '<p class="no-entries">guestbook unavailable - run: node server.js</p>';
+        guestbookEntries.innerHTML = '<p class="no-entries">could not load guestbook</p>';
     }
 }
 
@@ -152,21 +167,48 @@ if (guestbookForm) {
     guestbookForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
+        if (!JSONBIN_BIN_ID || !JSONBIN_API_KEY) {
+            alert('guestbook not configured yet!');
+            return;
+        }
+
         const nameInput = document.getElementById('gb-name');
         const messageInput = document.getElementById('gb-message');
-        const name = nameInput.value.trim();
-        const message = messageInput.value.trim();
+        const name = nameInput.value.trim().slice(0, 50);
+        const message = messageInput.value.trim().slice(0, 500);
 
         if (!name || !message) return;
 
         try {
-            const response = await fetch('/api/guestbook', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ name, message })
+            // First, get current entries
+            const getResponse = await fetch(`https://api.jsonbin.io/v3/b/${JSONBIN_BIN_ID}/latest`, {
+                headers: { 'X-Access-Key': JSONBIN_API_KEY }
             });
 
-            if (response.ok) {
+            let entries = [];
+            if (getResponse.ok) {
+                const data = await getResponse.json();
+                entries = data.record || [];
+            }
+
+            // Add new entry
+            entries.push({
+                name,
+                message,
+                date: new Date().toISOString()
+            });
+
+            // Save back to JSONbin
+            const putResponse = await fetch(`https://api.jsonbin.io/v3/b/${JSONBIN_BIN_ID}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-Access-Key': JSONBIN_API_KEY
+                },
+                body: JSON.stringify(entries)
+            });
+
+            if (putResponse.ok) {
                 nameInput.value = '';
                 messageInput.value = '';
                 alert('~*~ THANKS FOR SIGNING! ~*~');
@@ -175,7 +217,7 @@ if (guestbookForm) {
                 alert('oops! something went wrong. try again!');
             }
         } catch (e) {
-            alert('guestbook unavailable - make sure server.js is running!');
+            alert('could not save to guestbook. try again!');
         }
     });
 }
