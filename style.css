@@ -670,6 +670,53 @@ body {
     border: 1px solid #333333;
 }
 
+.badge-placeholder {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #333333;
+    color: #00FF00;
+    border: 2px inset #666666;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 0.8rem;
+}
+
+.small-star,
+.tiny-star,
+.small-gif {
+    width: 25px;
+    height: auto;
+    vertical-align: middle;
+}
+
+.small-flame {
+    width: 40px;
+    height: auto;
+}
+
+.footer-star {
+    width: 30px;
+    height: auto;
+}
+
+.arrow-gif,
+.btn-arrow {
+    width: 20px;
+    height: auto;
+    vertical-align: middle;
+}
+
+.up-arrow {
+    width: 15px;
+    height: auto;
+    vertical-align: middle;
+    transform: rotate(-90deg);
+}
+
+.bullet {
+    color: #FF00FF;
+    margin-right: 5px;
+}
+
 .footer-decoration {
     margin: 20px 0;
 }
