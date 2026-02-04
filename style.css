@@ -1132,6 +1132,27 @@ body.light-mode .member-list li strong {
     color: #CC0000;
 }
 
+body.light-mode .release-box {
+    background-color: #FFFFEE;
+    border-color: #009900;
+}
+
+body.light-mode .release-info h3 {
+    color: #006600;
+}
+
+body.light-mode .release-year {
+    color: #666666;
+}
+
+body.light-mode .listen-link {
+    color: #0066CC;
+}
+
+body.light-mode .music-note {
+    color: #666666;
+}
+
 body.light-mode .social-links a {
     background: linear-gradient(180deg, #FFCC00 0%, #FF9900 100%);
     border-color: #CC0099;
