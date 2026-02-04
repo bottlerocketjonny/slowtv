@@ -116,6 +116,26 @@ body {
     padding: 8px 0;
     border-top: 2px solid #FFFF00;
     border-bottom: 2px solid #FFFF00;
+    /* CSS fallback for browsers without marquee support */
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* CSS animation fallback when marquee element is not supported */
+@keyframes marquee-scroll {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Apply animation to marquee content */
+.welcome-marquee {
+    animation: marquee-scroll 12s linear infinite;
 }
 
 /* ================================
