@@ -248,7 +248,7 @@ window.addEventListener('DOMContentLoaded', () => {
 // ================================
 
 const sparkles = [];
-const maxSparkles = 50;
+const maxSparkles = 100;
 
 const sparkleColors = [
     '#FFFF00', '#FF00FF', '#00FFFF', '#FF6600', '#00FF00', '#FF0066'
@@ -271,7 +271,7 @@ function createSparkle(x, y) {
         z-index: 9999;
         left: ${x + offsetX}px;
         top: ${y + offsetY}px;
-        animation: sparkle-fade 0.6s ease-out forwards;
+        animation: sparkle-fade 1.2s ease-out forwards;
     `;
     document.body.appendChild(sparkle);
 
@@ -294,7 +294,7 @@ function createSparkle(x, y) {
         if (index > -1) {
             sparkles.splice(index, 1);
         }
-    }, 600);
+    }, 1200);
 }
 
 // Add sparkle animation CSS
