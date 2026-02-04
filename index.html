@@ -3,142 +3,269 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Slow TV - Sheffield, UK">
-    <title>Slow TV</title>
+    <meta name="description" content="slow tv">
+    <title>~ slow tv ~</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <!-- Preload critical fonts to prevent flash -->
-    <link rel="preload" href="fonts/Karrik-Regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="nav">
-        <div class="nav-container">
-            <a href="#hero" class="nav-logo">SLOW TV</a>
-            <button class="hamburger" aria-label="Toggle menu">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </button>
-            <ul class="nav-menu">
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#music" class="nav-link">Music</a></li>
-                <li><a href="#tour" class="nav-link">Tour</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
+    <!-- Retro Welcome Header -->
+    <div class="top-banner">
+        <img src="assets/gifs/flame.gif" alt="flame" class="flame-left">
+        <h1 class="main-title">
+            <span class="title-glow">~*~ slow tv ~*~</span>
+        </h1>
+        <img src="assets/gifs/flame.gif" alt="flame" class="flame-right">
+    </div>
+
+    <div class="subtitle-area">
+        <img src="assets/gifs/music.gif" alt="music notes" class="music-gif">
+        <span class="tagline">lorem ipsum dolor sit amet</span>
+        <img src="assets/gifs/music.gif" alt="music notes" class="music-gif">
+    </div>
+
+    <div class="marquee-container">
+        <div class="marquee-content">
+            *** welcome to our homepage!!! *** thanks for stopping by *** please sign our guestbook *** slow tv ***
         </div>
+    </div>
+
+    <hr class="rainbow-hr">
+
+    <!-- Navigation -->
+    <nav class="retro-nav">
+        <img src="assets/gifs/star.gif" alt="star" class="nav-star">
+        <a href="#about">about us</a> |
+        <a href="#music">our music</a> |
+        <a href="#tour">tour dates</a> |
+        <a href="#contact">contact</a> |
+        <a href="#guestbook">guestbook</a>
+        <img src="assets/gifs/star.gif" alt="star" class="nav-star">
     </nav>
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">
-                <span class="title-slow">SLOW</span>
-                <span class="title-tv">TV</span>
-            </h1>
-        </div>
-        <div class="halftone-overlay"></div>
-    </section>
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" class="theme-toggle" title="toggle light/dark mode">
+        <span class="theme-icon">☀️</span>
+    </button>
 
-    <!-- About Section -->
-    <section id="about" class="section about">
-        <div class="container">
-            <h2 class="section-title">About</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    <hr class="rainbow-hr">
 
-                    <div class="members">
-                        <h3>Lineup</h3>
-                        <ul class="members-list">
-                            <li><span class="member-name">Rob Edwards-Bell</span> - vocals, guitar</li>
-                            <li><span class="member-name">Tom Beeton</span> - guitar</li>
-                            <li><span class="member-name">Euan Kearney</span> - bass guitar</li>
-                            <li><span class="member-name">Jonny Coddington</span> - drums, bvs</li>
-                        </ul>
+    <!-- Main Content Area -->
+    <div class="content-wrapper">
+
+        <!-- About Section -->
+        <section id="about" class="retro-section">
+            <div class="section-header">
+                <img src="assets/gifs/note.gif" alt="music note">
+                <h2>about us</h2>
+                <img src="assets/gifs/note.gif" alt="music note">
+            </div>
+
+            <div class="about-box">
+                <p class="intro-text">
+                    <img src="assets/gifs/music.gif" alt="guitar" class="float-left">
+                    lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ut enim ad minim veniam, quis nostrud exercitation ullamco.
+                </p>
+                <p>
+                    duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. excepteur sint occaecat cupidatat non proident.
+                </p>
+            </div>
+
+            <div class="members-box">
+                <h3>
+                    <img src="assets/gifs/star.gif" alt="star" class="small-star">
+                    lineup
+                    <img src="assets/gifs/star.gif" alt="star" class="small-star">
+                </h3>
+                <ul class="member-list">
+                    <li><span class="bullet">&#9834;</span> <strong>rob edwards-bell</strong> - vocals, guitar</li>
+                    <li><span class="bullet">&#9834;</span> <strong>tom beeton</strong> - guitar</li>
+                    <li><span class="bullet">&#9834;</span> <strong>euan kearney</strong> - bass guitar</li>
+                    <li><span class="bullet">&#9834;</span> <strong>jonny coddington</strong> - drums, bvs</li>
+                </ul>
+            </div>
+
+            <div class="band-photo-placeholder">
+                <span class="blink">[ band photo coming soon! ]</span>
+                <br><br>
+                <img src="assets/gifs/construction.gif" alt="under construction">
+            </div>
+        </section>
+
+        <hr class="divider-hr">
+
+        <!-- Music Section -->
+        <section id="music" class="retro-section">
+            <div class="section-header">
+                <img src="assets/gifs/guitar.gif" alt="guitar" class="small-gif">
+                <h2>our music</h2>
+                <img src="assets/gifs/drums.gif" alt="drums" class="small-gif">
+            </div>
+
+            <div class="release-box">
+                <div class="album-art-placeholder">
+                    <span class="new-badge blink">NEW!</span>
+                    <div class="album-placeholder-inner">
+                        [ ALBUM ART ]
                     </div>
                 </div>
-                <div class="about-image">
-                    <div class="image-placeholder halftone-bg">
-                        <span>Band Photo</span>
-                    </div>
+                <div class="release-info">
+                    <h3>demo ep</h3>
+                    <p class="release-year">released: 2025</p>
+                    <p>lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>
+                        <img src="assets/gifs/arrow.gif" alt="arrow" class="arrow-gif">
+                        <a href="#" class="listen-link">click here to listen!</a>
+                    </p>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Music Section -->
-    <section id="music" class="section music">
-        <div class="container">
-            <h2 class="section-title">Music</h2>
-            <div class="music-content">
-                <div class="releases">
-                    <div class="release-card">
-                        <div class="release-artwork halftone-bg">
-                            <span>Album Art</span>
-                        </div>
-                        <h3>Demo EP</h3>
-                        <p class="release-year">2025</p>
-                    </div>
-                </div>
+            <p class="music-note">
+                <img src="assets/gifs/construction.gif" alt="under construction">
+                more music coming soon!
+                <img src="assets/gifs/construction.gif" alt="under construction">
+            </p>
+        </section>
+
+        <hr class="divider-hr">
+
+        <!-- Tour Section -->
+        <section id="tour" class="retro-section">
+            <div class="section-header">
+                <img src="assets/gifs/star.gif" alt="ticket" class="small-gif">
+                <h2>tour dates</h2>
+                <img src="assets/gifs/star.gif" alt="ticket" class="small-gif">
             </div>
-        </div>
-    </section>
 
-    <!-- Tour Section -->
-    <section id="tour" class="section tour">
-        <div class="container">
-            <h2 class="section-title">Tour</h2>
-            <div class="tour-poster">
-                <img src="assets/slow tv cc gig animated.gif" alt="Slow TV at Richmond Cricket Club - 21 December">
+            <div class="tour-poster-box">
+                <p class="gig-announcement blink">*** upcoming gig! ***</p>
+                <img src="assets/slow tv cc gig animated.gif" alt="Slow TV gig poster" class="tour-poster-img">
+                <p class="tour-info">lorem ipsum dolor sit amet</p>
             </div>
-        </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section contact">
-        <div class="container">
-            <h2 class="section-title">Contact</h2>
-            <div class="contact-content">
-                <div class="newsletter">
-                    <h3>Mailing List</h3>
-                    <p>Sign up for news about new releases and tour dates</p>
-                    <form class="newsletter-form" id="newsletter-form">
+            <div class="more-dates-box">
+                <p>
+                    <img src="assets/gifs/construction.gif" alt="under construction">
+                    more tour dates coming soon!
+                    <img src="assets/gifs/construction.gif" alt="under construction">
+                </p>
+            </div>
+        </section>
+
+        <hr class="divider-hr">
+
+        <!-- Contact Section -->
+        <section id="contact" class="retro-section">
+            <div class="section-header">
+                <img src="assets/gifs/email.gif" alt="mail">
+                <h2>contact us</h2>
+                <img src="assets/gifs/email.gif" alt="mail">
+            </div>
+
+            <div class="contact-grid">
+                <!-- Mailing List -->
+                <div class="contact-box">
+                    <h3>
+                        <img src="assets/gifs/star.gif" alt="star" class="tiny-star">
+                        join our mailing list!
+                    </h3>
+                    <p>lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <form class="retro-form" id="newsletter-form">
                         <input type="email" placeholder="your@email.com" required>
-                        <button type="submit">Subscribe</button>
+                        <button type="submit">Subscribe!</button>
                     </form>
-
-                    <div class="social-links">
-                        <h3>Social Media</h3>
-                        <div class="social-icons">
-                            <a href="https://instagram.com/slowtvband" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">Instagram</a>
-                            <a href="https://tiktok.com/@slowtvband" class="social-link" aria-label="TikTok" target="_blank" rel="noopener noreferrer">TikTok</a>
-                            <a href="#" class="social-link" aria-label="Spotify">Spotify</a>
-                            <a href="#" class="social-link" aria-label="Bandcamp">Bandcamp</a>
-                        </div>
-                    </div>
                 </div>
 
-                <div class="contact-form-section">
-                    <h3>Get In Touch</h3>
-                    <form class="contact-form" action="https://formsubmit.co/jj.coddington93@gmail.com" method="POST">
-                        <input type="text" name="name" placeholder="Name" required>
-                        <input type="email" name="email" placeholder="Email" required>
-                        <textarea name="message" placeholder="Message" rows="5" required></textarea>
-                        <button type="submit">Send</button>
+                <!-- Get In Touch -->
+                <div class="contact-box">
+                    <h3>
+                        <img src="assets/gifs/star.gif" alt="star" class="tiny-star">
+                        send us a message!
+                    </h3>
+                    <form class="retro-form contact-form-full" action="https://formsubmit.co/jj.coddington93@gmail.com" method="POST">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="message" placeholder="Your Message..." rows="4" required></textarea>
+                        <button type="submit">Send Message!</button>
                     </form>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2025 Slow TV</p>
+            <!-- Social Links -->
+            <div class="social-box">
+                <h3>find us on the web!</h3>
+                <div class="social-links-retro">
+                    <a href="https://instagram.com/slowtvband" target="_blank" rel="noopener noreferrer" class="social-btn">
+                        <img src="assets/gifs/arrow.gif" alt="arrow" class="btn-arrow"> instagram
+                    </a>
+                    <a href="https://tiktok.com/@slowtvband" target="_blank" rel="noopener noreferrer" class="social-btn">
+                        <img src="assets/gifs/arrow.gif" alt="arrow" class="btn-arrow"> tiktok
+                    </a>
+                    <a href="#" class="social-btn">
+                        <img src="assets/gifs/arrow.gif" alt="arrow" class="btn-arrow"> spotify
+                    </a>
+                    <a href="#" class="social-btn">
+                        <img src="assets/gifs/arrow.gif" alt="arrow" class="btn-arrow"> bandcamp
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <hr class="divider-hr">
+
+        <!-- Guestbook Section -->
+        <section id="guestbook" class="retro-section">
+            <div class="section-header">
+                <img src="assets/gifs/note.gif" alt="book">
+                <h2>guestbook</h2>
+                <img src="assets/gifs/note.gif" alt="book">
+            </div>
+
+            <div class="guestbook-box">
+                <p>sign our guestbook and let us know you stopped by!</p>
+
+                <form id="guestbook-form" class="retro-form guestbook-form">
+                    <input type="text" id="gb-name" placeholder="your name" maxlength="50" required>
+                    <textarea id="gb-message" placeholder="your message..." rows="3" maxlength="500" required></textarea>
+                    <button type="submit">sign guestbook!</button>
+                </form>
+
+                <div class="guestbook-entries" id="guestbook-entries">
+                    <p class="loading-entries">loading entries...</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <hr class="rainbow-hr">
+
+    <!-- Footer with badges and counter -->
+    <footer class="retro-footer">
+        <div class="visitor-counter">
+            <p>you are visitor number:</p>
+            <div class="counter-display" id="visitor-counter">0000000</div>
+        </div>
+
+
+        <div class="footer-decoration">
+            <img src="assets/gifs/star.gif" alt="star" class="footer-star">
+            <img src="assets/gifs/star.gif" alt="star" class="footer-star">
+            <img src="assets/gifs/star.gif" alt="star" class="footer-star">
+        </div>
+
+        <p class="copyright">&copy; 2026 slow tv</p>
+
+        <div class="footer-gifs">
+            <img src="assets/gifs/guitar.gif" alt="guitar">
+            <img src="assets/gifs/rockstar.gif" alt="rock star" class="small-flame">
+            <img src="assets/gifs/drums.gif" alt="drums">
+        </div>
+
+        <p class="thanks-msg">thanks for visiting!</p>
+
+        <a href="#" class="back-to-top">
+            <img src="assets/gifs/arrow.gif" alt="arrow" class="up-arrow"> back to top
+        </a>
     </footer>
 
     <script src="script.js"></script>
