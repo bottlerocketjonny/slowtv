@@ -84,6 +84,106 @@ if (newsletterForm) {
 }
 
 // ================================
+// Guestbook
+// ================================
+
+const guestbookForm = document.getElementById('guestbook-form');
+const guestbookEntries = document.getElementById('guestbook-entries');
+
+// Format date nicely
+function formatDate(dateString) {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-GB', {
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric'
+    }).toLowerCase();
+}
+
+// Escape HTML to prevent XSS
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
+
+// Render guestbook entries
+function renderEntries(entries) {
+    if (!guestbookEntries) return;
+
+    if (!entries || entries.length === 0) {
+        guestbookEntries.innerHTML = '<p class="no-entries">no entries yet - be the first to sign!</p>';
+        return;
+    }
+
+    // Show newest first
+    const sorted = [...entries].reverse();
+
+    guestbookEntries.innerHTML = sorted.map(entry => `
+        <div class="guestbook-entry">
+            <div class="guestbook-entry-header">
+                <span class="guestbook-entry-name">${escapeHtml(entry.name)}</span>
+                <span class="guestbook-entry-date">${formatDate(entry.date)}</span>
+            </div>
+            <div class="guestbook-entry-message">${escapeHtml(entry.message)}</div>
+        </div>
+    `).join('');
+}
+
+// Load guestbook entries
+async function loadGuestbook() {
+    if (!guestbookEntries) return;
+
+    try {
+        const response = await fetch('/api/guestbook');
+        if (response.ok) {
+            const entries = await response.json();
+            renderEntries(entries);
+        } else {
+            guestbookEntries.innerHTML = '<p class="no-entries">guestbook unavailable - run server.js!</p>';
+        }
+    } catch (e) {
+        guestbookEntries.innerHTML = '<p class="no-entries">guestbook unavailable - run: node server.js</p>';
+    }
+}
+
+// Submit guestbook entry
+if (guestbookForm) {
+    guestbookForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const nameInput = document.getElementById('gb-name');
+        const messageInput = document.getElementById('gb-message');
+        const name = nameInput.value.trim();
+        const message = messageInput.value.trim();
+
+        if (!name || !message) return;
+
+        try {
+            const response = await fetch('/api/guestbook', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, message })
+            });
+
+            if (response.ok) {
+                nameInput.value = '';
+                messageInput.value = '';
+                alert('~*~ THANKS FOR SIGNING! ~*~');
+                loadGuestbook();
+            } else {
+                alert('oops! something went wrong. try again!');
+            }
+        } catch (e) {
+            alert('guestbook unavailable - make sure server.js is running!');
+        }
+    });
+}
+
+// Load guestbook on page load
+loadGuestbook();
+
+// ================================
 // Random Greeting on Page Load
 // ================================
 

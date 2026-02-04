@@ -217,12 +217,17 @@
             </div>
 
             <div class="guestbook-box">
-                <p>lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <p class="guestbook-coming">
-                    <img src="assets/gifs/construction.gif" alt="under construction">
-                    <span class="blink">guestbook coming soon!</span>
-                    <img src="assets/gifs/construction.gif" alt="under construction">
-                </p>
+                <p>sign our guestbook and let us know you stopped by!</p>
+
+                <form id="guestbook-form" class="retro-form guestbook-form">
+                    <input type="text" id="gb-name" placeholder="your name" maxlength="50" required>
+                    <textarea id="gb-message" placeholder="your message..." rows="3" maxlength="500" required></textarea>
+                    <button type="submit">sign guestbook!</button>
+                </form>
+
+                <div class="guestbook-entries" id="guestbook-entries">
+                    <p class="loading-entries">loading entries...</p>
+                </div>
             </div>
         </section>
     </div>
