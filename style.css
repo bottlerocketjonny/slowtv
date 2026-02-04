@@ -1000,14 +1000,20 @@ a {
 .theme-toggle {
     position: fixed;
     top: 10px;
-    right: 10px;
+    right: 25px;
     z-index: 10000;
-    background: #000080;
-    border: 3px outset #C0C0C0;
+    background: #C0C0C0;
+    border: 3px outset #FFFFFF;
     padding: 8px 12px;
     cursor: pointer;
     font-size: 20px;
     transition: transform 0.2s;
+}
+
+@media (max-width: 600px) {
+    .theme-toggle {
+        right: 35px;
+    }
 }
 
 .theme-toggle:hover {
@@ -1109,8 +1115,8 @@ body.light-mode a:hover {
 }
 
 body.light-mode .theme-toggle {
-    background: #000080;
-    border-color: #CC0099;
+    background: #333333;
+    border: 3px outset #666666;
     color: #FFFFFF;
 }
 
