@@ -325,11 +325,19 @@ body {
     color: #00FFFF;
 }
 
-.band-photo-placeholder {
+.band-photo-box {
     background-color: #333333;
     border: 3px double #FFFFFF;
-    padding: 30px 20px;
-    margin-top: 20px;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.band-photo {
+    max-width: 100%;
+    height: auto;
+    border: 3px solid #FF00FF;
+    box-shadow: 5px 5px 0px #000000;
 }
 
 /* ================================
@@ -514,6 +522,41 @@ body {
 .contact-box p {
     font-size: clamp(0.9rem, 2.5vw, 1rem);
     margin-bottom: 15px;
+}
+
+.contact-box-centered {
+    max-width: 400px;
+}
+
+.email-display {
+    text-align: center;
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #330033;
+    border: 3px solid #FF00FF;
+}
+
+.email-display p {
+    font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive, sans-serif;
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    margin: 0;
+}
+
+.email-display a {
+    color: #00FFFF;
+    text-decoration: none;
+}
+
+.email-display a:hover {
+    color: #FF00FF;
+    text-decoration: underline;
+}
+
+.email-display .email-icon {
+    width: 20px;
+    height: auto;
+    vertical-align: middle;
+    margin-right: 8px;
 }
 
 /* ================================
