@@ -91,7 +91,7 @@ if (newsletterForm) {
 // 2. Create a new bin with content: []
 // 3. Copy your Bin ID and API Key below
 
-const JSONBIN_BIN_ID = '69835f26d0ea881f40a07a70';
+const JSONBIN_BIN_ID = '69836085ae596e708f10eb6c';
 const JSONBIN_API_KEY = '$2a$10$98rP8ejw3CpahlGRHa.61uAjwJAj4Z.QJn46OTIKJNvMj/mkg/tfu';
 
 const guestbookForm = document.getElementById('guestbook-form');
