@@ -114,6 +114,7 @@ body {
     padding: 8px 0;
     overflow: hidden;
     width: 100%;
+    contain: content;
 }
 
 .marquee-content {
@@ -123,18 +124,18 @@ body {
     font-weight: bold;
     white-space: nowrap;
     display: inline-block;
-    animation: marquee-scroll 20s linear infinite;
+    padding-left: 100%;
+    animation: marquee-scroll 15s linear infinite;
     will-change: transform;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
 }
 
 @keyframes marquee-scroll {
     0% {
-        transform: translate3d(100vw, 0, 0);
+        transform: translateX(0);
     }
     100% {
-        transform: translate3d(-100%, 0, 0);
+        transform: translateX(-100%);
     }
 }
 
@@ -201,53 +202,9 @@ body {
     vertical-align: middle;
 }
 
+/* Hamburger removed - using horizontal layout on mobile */
 .nav-toggle {
     display: none;
-    background: none;
-    border: 2px solid #00FFFF;
-    padding: 8px;
-    cursor: pointer;
-    margin: 0 auto 10px;
-}
-
-.hamburger {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background: #00FFFF;
-    position: relative;
-}
-
-.hamburger::before,
-.hamburger::after {
-    content: '';
-    position: absolute;
-    width: 25px;
-    height: 3px;
-    background: #00FFFF;
-    left: 0;
-}
-
-.hamburger::before {
-    top: -8px;
-}
-
-.hamburger::after {
-    top: 8px;
-}
-
-.nav-toggle.open .hamburger {
-    background: transparent;
-}
-
-.nav-toggle.open .hamburger::before {
-    transform: rotate(45deg);
-    top: 0;
-}
-
-.nav-toggle.open .hamburger::after {
-    transform: rotate(-45deg);
-    top: 0;
 }
 
 /* ================================
@@ -270,6 +227,7 @@ body {
     margin: 20px auto;
     padding: 20px;
     text-align: center;
+    contain: layout style;
 }
 
 .section-header {
@@ -920,26 +878,38 @@ body {
         padding: 10px 5px;
     }
 
-    .nav-toggle {
-        display: block;
-    }
-
+    /* Keep horizontal layout, just make it compact */
     .nav-links {
-        display: none;
-    }
-
-    .nav-links.open {
-        display: block;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 2px;
     }
 
     .retro-nav a {
-        display: block;
-        margin: 5px 0;
-        padding: 8px;
+        display: inline-block;
+        margin: 2px;
+        padding: 6px 8px;
+        font-size: 0.85rem;
     }
 
     .nav-star {
         display: none;
+    }
+
+    /* Disable heavy animations on mobile for performance */
+    .title-glow {
+        animation: none;
+    }
+
+    .rainbow-hr {
+        animation: none;
+        background-size: 100% 100%;
+    }
+
+    .blink {
+        animation: none;
     }
 
     .content-wrapper {
@@ -1032,10 +1002,14 @@ a {
     cursor: pointer;
 }
 
-/* Add some jank with slight misalignment on hover */
-.retro-section:hover {
-    transform: rotate(0.2deg);
-    transition: transform 0.1s ease;
+/* Add some jank with slight misalignment on hover - desktop only */
+@media (hover: hover) {
+    .retro-section {
+        transition: transform 0.1s ease;
+    }
+    .retro-section:hover {
+        transform: rotate(0.2deg);
+    }
 }
 
 /* Scrollbar styling for extra retro feel (webkit browsers) */
@@ -1127,16 +1101,6 @@ body.light-mode .retro-nav {
 
 body.light-mode .nav-toggle {
     border-color: #000080;
-}
-
-body.light-mode .hamburger,
-body.light-mode .hamburger::before,
-body.light-mode .hamburger::after {
-    background: #000080;
-}
-
-body.light-mode .nav-toggle.open .hamburger {
-    background: transparent;
 }
 
 body.light-mode .retro-nav a {
