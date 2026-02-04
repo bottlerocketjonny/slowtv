@@ -32,25 +32,35 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ================================
-// Visitor Counter Animation
+// Visitor Counter (localStorage)
 // ================================
 
 const counterDisplay = document.getElementById('visitor-counter');
 if (counterDisplay) {
-    // Simulate a visitor counter incrementing on load
-    let count = 4780;
-    const targetCount = 4782;
+    // Get current count from localStorage or start at a fun number
+    let count = parseInt(localStorage.getItem('slowtv-visitor-count')) || 4782;
 
-    const incrementCounter = () => {
-        if (count < targetCount) {
-            count++;
-            counterDisplay.textContent = String(count).padStart(7, '0');
-            setTimeout(incrementCounter, 500);
+    // Check if this is a new session
+    const lastVisit = sessionStorage.getItem('slowtv-visited');
+    if (!lastVisit) {
+        // New visit - increment counter
+        count++;
+        localStorage.setItem('slowtv-visitor-count', count);
+        sessionStorage.setItem('slowtv-visited', 'true');
+    }
+
+    // Animate the counter display
+    let displayCount = count - 5;
+    const animateCounter = () => {
+        if (displayCount < count) {
+            displayCount++;
+            counterDisplay.textContent = String(displayCount).padStart(7, '0');
+            setTimeout(animateCounter, 150);
         }
     };
 
     // Start counting after a short delay
-    setTimeout(incrementCounter, 1000);
+    setTimeout(animateCounter, 500);
 }
 
 // ================================
