@@ -248,21 +248,30 @@ window.addEventListener('DOMContentLoaded', () => {
 // ================================
 
 const sparkles = [];
-const maxSparkles = 15;
+const maxSparkles = 50;
+
+const sparkleColors = [
+    '#FFFF00', '#FF00FF', '#00FFFF', '#FF6600', '#00FF00', '#FF0066'
+];
 
 function createSparkle(x, y) {
+    const color = sparkleColors[Math.floor(Math.random() * sparkleColors.length)];
+    const size = 4 + Math.random() * 8;
+    const offsetX = (Math.random() - 0.5) * 20;
+    const offsetY = (Math.random() - 0.5) * 20;
+
     const sparkle = document.createElement('div');
     sparkle.style.cssText = `
         position: fixed;
         pointer-events: none;
-        width: 8px;
-        height: 8px;
-        background: radial-gradient(circle, #FFFF00 0%, #FF00FF 50%, transparent 70%);
+        width: ${size}px;
+        height: ${size}px;
+        background: radial-gradient(circle, ${color} 0%, transparent 70%);
         border-radius: 50%;
         z-index: 9999;
-        left: ${x}px;
-        top: ${y}px;
-        animation: sparkle-fade 0.8s ease-out forwards;
+        left: ${x + offsetX}px;
+        top: ${y + offsetY}px;
+        animation: sparkle-fade 0.6s ease-out forwards;
     `;
     document.body.appendChild(sparkle);
 
@@ -285,7 +294,7 @@ function createSparkle(x, y) {
         if (index > -1) {
             sparkles.splice(index, 1);
         }
-    }, 800);
+    }, 600);
 }
 
 // Add sparkle animation CSS
@@ -306,12 +315,15 @@ document.head.appendChild(sparkleStyle);
 
 // Track mouse movement (throttled for performance)
 let lastSparkleTime = 0;
-const sparkleThrottle = 50; // ms between sparkles
+const sparkleThrottle = 30; // ms between sparkles
 
 document.addEventListener('mousemove', (e) => {
     const now = Date.now();
     if (now - lastSparkleTime > sparkleThrottle) {
-        createSparkle(e.clientX, e.clientY);
+        // Create multiple sparkles for extra magic!
+        for (let i = 0; i < 3; i++) {
+            createSparkle(e.clientX, e.clientY);
+        }
         lastSparkleTime = now;
     }
 });
