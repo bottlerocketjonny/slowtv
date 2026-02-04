@@ -4,6 +4,28 @@
 // ================================
 
 // ================================
+// Mobile Menu Toggle
+// ================================
+
+const navToggle = document.getElementById('nav-toggle');
+const navLinks = document.getElementById('nav-links');
+
+if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+        navToggle.classList.toggle('open');
+        navLinks.classList.toggle('open');
+    });
+
+    // Close menu when a link is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navToggle.classList.remove('open');
+            navLinks.classList.remove('open');
+        });
+    });
+}
+
+// ================================
 // Smooth Scrolling for Navigation
 // ================================
 
@@ -343,19 +365,24 @@ sparkleStyle.textContent = `
 document.head.appendChild(sparkleStyle);
 
 // Track mouse movement (throttled for performance)
-let lastSparkleTime = 0;
-const sparkleThrottle = 30; // ms between sparkles
+// Only enable on non-touch devices
+const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
 
-document.addEventListener('mousemove', (e) => {
-    const now = Date.now();
-    if (now - lastSparkleTime > sparkleThrottle) {
-        // Create multiple sparkles for extra magic!
-        for (let i = 0; i < 3; i++) {
-            createSparkle(e.clientX, e.clientY);
+if (!isTouchDevice) {
+    let lastSparkleTime = 0;
+    const sparkleThrottle = 30; // ms between sparkles
+
+    document.addEventListener('mousemove', (e) => {
+        const now = Date.now();
+        if (now - lastSparkleTime > sparkleThrottle) {
+            // Create multiple sparkles for extra magic!
+            for (let i = 0; i < 3; i++) {
+                createSparkle(e.clientX, e.clientY);
+            }
+            lastSparkleTime = now;
         }
-        lastSparkleTime = now;
-    }
-});
+    });
+}
 
 // ================================
 // Keep title simple
