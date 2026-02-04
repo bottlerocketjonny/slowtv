@@ -19,8 +19,8 @@ body {
     font-size: 16px;
     line-height: 1.5;
     color: #FFFF00;
-    background-color: #000080;
-    background-image: url('https://web.archive.org/web/20091027065803im_/http://www.geocities.com/SunsetStrip/Alley/6128/stars.gif');
+    background-color: #000066;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"><rect fill="%23000066" width="40" height="40"/><circle fill="%23FFFF00" cx="10" cy="10" r="2"/><circle fill="%2300FFFF" cx="30" cy="30" r="1.5"/><circle fill="%23FF00FF" cx="25" cy="8" r="1"/><circle fill="%2300FF00" cx="5" cy="35" r="1.5"/><circle fill="%23FF6600" cx="35" cy="18" r="1"/></svg>');
     background-repeat: repeat;
     text-align: center;
     min-height: 100vh;
@@ -107,35 +107,32 @@ body {
    Marquee
    ================================ */
 
-.welcome-marquee {
+.marquee-container {
     background-color: #FF0000;
+    border-top: 2px solid #FFFF00;
+    border-bottom: 2px solid #FFFF00;
+    padding: 8px 0;
+    overflow: hidden;
+    width: 100%;
+}
+
+.marquee-content {
     color: #FFFFFF;
     font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
     font-size: clamp(0.9rem, 3vw, 1.2rem);
     font-weight: bold;
-    padding: 8px 0;
-    border-top: 2px solid #FFFF00;
-    border-bottom: 2px solid #FFFF00;
-    /* CSS fallback for browsers without marquee support */
-    display: block;
-    width: 100%;
-    overflow: hidden;
     white-space: nowrap;
+    display: inline-block;
+    animation: marquee-scroll 20s linear infinite;
 }
 
-/* CSS animation fallback when marquee element is not supported */
 @keyframes marquee-scroll {
     0% {
-        transform: translateX(100%);
+        transform: translateX(100vw);
     }
     100% {
         transform: translateX(-100%);
     }
-}
-
-/* Apply animation to marquee content */
-.welcome-marquee {
-    animation: marquee-scroll 12s linear infinite;
 }
 
 /* ================================
