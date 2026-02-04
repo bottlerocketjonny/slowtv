@@ -92,7 +92,7 @@ if (newsletterForm) {
 // 3. Copy your Bin ID and API Key below
 
 const JSONBIN_BIN_ID = '69835f26d0ea881f40a07a70';
-const JSONBIN_API_KEY = '$2a$10$iy4RcysKvTVK9uw7/BfHA.4aziRmwEGsOxtAMyvebOOfmpfr3BWk2';
+const JSONBIN_API_KEY = '$2a$10$98rP8ejw3CpahlGRHa.61uAjwJAj4Z.QJn46OTIKJNvMj/mkg/tfu';
 
 const guestbookForm = document.getElementById('guestbook-form');
 const guestbookEntries = document.getElementById('guestbook-entries');
@@ -241,7 +241,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const randomGreeting = greetings[Math.floor(Math.random() * greetings.length)];
     console.log('%c' + randomGreeting, 'font-size: 20px; color: #FF00FF; font-family: Comic Sans MS;');
     console.log('%cSLOW TV', 'font-size: 48px; font-weight: bold; color: #00FF00; text-shadow: 2px 2px #FF0000;');
-    console.log('%cYou found the secret console message! You\'re a true 90s hacker!', 'font-size: 14px; color: #00FFFF;');
 });
 
 // ================================
