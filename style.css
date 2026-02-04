@@ -1109,8 +1109,27 @@ body.light-mode a:hover {
 }
 
 body.light-mode .theme-toggle {
-    background: #FFCC00;
+    background: #000080;
     border-color: #CC0099;
+    color: #FFFFFF;
+}
+
+body.light-mode .subtitle-area {
+    background-color: #FF9900;
+    border-bottom-color: #CC0099;
+}
+
+body.light-mode .tagline {
+    color: #000080;
+}
+
+body.light-mode .member-list li {
+    color: #000066;
+    border-bottom-color: #CC0099;
+}
+
+body.light-mode .member-list li strong {
+    color: #CC0000;
 }
 
 body.light-mode .social-links a {
