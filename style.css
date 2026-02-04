@@ -52,7 +52,7 @@ body {
 }
 
 .main-title {
-    font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
+    font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive, sans-serif;
     font-size: clamp(2rem, 10vw, 5rem);
     margin: 0;
 }
@@ -91,7 +91,7 @@ body {
 }
 
 .tagline {
-    font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
+    font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive, sans-serif;
     font-size: clamp(1rem, 4vw, 1.5rem);
     color: #00FF00;
     margin: 0 10px;
@@ -118,7 +118,7 @@ body {
 
 .marquee-content {
     color: #FFFFFF;
-    font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
+    font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive, sans-serif;
     font-size: clamp(0.9rem, 3vw, 1.2rem);
     font-weight: bold;
     white-space: nowrap;
@@ -177,7 +177,7 @@ body {
 
 .retro-nav a {
     color: #00FFFF;
-    font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
+    font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive, sans-serif;
     font-size: clamp(0.9rem, 3vw, 1.2rem);
     font-weight: bold;
     text-decoration: none;
@@ -225,7 +225,7 @@ body {
 }
 
 .section-header h2 {
-    font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
+    font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive, sans-serif;
     font-size: clamp(1.5rem, 6vw, 2.5rem);
     color: #FF00FF;
     text-shadow: 2px 2px 0 #000000;
@@ -275,7 +275,7 @@ body {
 }
 
 .members-box h3 {
-    font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
+    font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive, sans-serif;
     font-size: clamp(1.2rem, 4vw, 1.5rem);
     color: #00FF00;
     margin-bottom: 15px;
@@ -391,7 +391,7 @@ body {
 }
 
 .release-info h3 {
-    font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
+    font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive, sans-serif;
     font-size: clamp(1.3rem, 4vw, 1.8rem);
     color: #00FF00;
     margin-bottom: 10px;
@@ -439,7 +439,7 @@ body {
 }
 
 .gig-announcement {
-    font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
+    font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive, sans-serif;
     font-size: clamp(1.2rem, 4vw, 1.5rem);
     margin-bottom: 15px;
 }
@@ -489,7 +489,7 @@ body {
 }
 
 .contact-box h3 {
-    font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
+    font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive, sans-serif;
     font-size: clamp(1rem, 3.5vw, 1.3rem);
     color: #00FF00;
     margin-bottom: 15px;
@@ -539,7 +539,7 @@ body {
 }
 
 .retro-form button {
-    font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
+    font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive, sans-serif;
     font-size: 1rem;
     font-weight: bold;
     padding: 10px 20px;
@@ -572,7 +572,7 @@ body {
 }
 
 .social-box h3 {
-    font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
+    font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive, sans-serif;
     font-size: clamp(1.2rem, 4vw, 1.5rem);
     color: #FFFF00;
     margin-bottom: 15px;
@@ -592,7 +592,7 @@ body {
     color: #FFFFFF;
     text-decoration: none;
     border: 3px outset #0000FF;
-    font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
+    font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive, sans-serif;
     font-weight: bold;
     font-size: clamp(0.9rem, 2.5vw, 1rem);
 }
@@ -660,7 +660,7 @@ body {
 .guestbook-entry-name {
     color: #00FF00;
     font-weight: bold;
-    font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
+    font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive, sans-serif;
 }
 
 .guestbook-entry-date {
@@ -704,7 +704,7 @@ body {
 }
 
 .visitor-counter p {
-    font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
+    font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive, sans-serif;
     font-size: 1rem;
     color: #FFFFFF;
     margin-bottom: 10px;
@@ -819,7 +819,7 @@ body {
 }
 
 .thanks-msg {
-    font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
+    font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive, sans-serif;
     font-size: 1.1rem;
     color: #FF00FF;
     margin-bottom: 20px;
@@ -832,7 +832,7 @@ body {
     color: #00FFFF;
     text-decoration: none;
     border: 2px solid #00FFFF;
-    font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
+    font-family: "Comic Sans MS", "Comic Sans", "Comic Neue", cursive, sans-serif;
     font-weight: bold;
 }
 
